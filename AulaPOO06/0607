@@ -1,0 +1,282 @@
+package Pessoas;
+
+public class Pessoa {
+	String nome;
+	String cpf;
+	String dataNascimento;
+	Endereco endereco;
+	
+	public Pessoa(String nome, String cpf, String dataNascimento) {
+		this.nome = nome;
+		this.dataNascimento = dataNascimento;
+		this.cpf = cpf;
+		this.endereco = new Endereco();
+	}
+
+	public Pessoa(String nome, String cpf) {
+		this.nome = nome;
+		this.dataNascimento = "";
+		this.cpf = cpf;
+		this.endereco = new Endereco();
+	}
+	
+	public Pessoa() {
+		this.nome = "";
+		this.dataNascimento = "";
+		this.cpf = "";
+		this.endereco = new Endereco();
+	}
+	
+	public String getPessoa() {
+		return "Nome: "+this.nome+"\n"+
+	           "Dt Nascimento: "+this.dataNascimento+"\n"+
+				"CPF: "+this.cpf+"\n"+
+				"Endereco: "+this.endereco.enderecoCompleto();		
+	}
+}
+
+
+package Pessoas;
+
+public class Funcionario extends Pessoa{
+	String dataAdmissao;
+	double salario;
+
+	public Funcionario() {
+		super();
+		this.dataAdmissao = "";
+		this.salario = 0;
+	}
+	public Funcionario(String nome, String cpf) {
+		super(nome, cpf, "01/01/01");
+		this.dataAdmissao = "";
+		this.salario = 0;
+	}
+	
+	public String getPessoa() {
+		return super.getPessoa()+"\n"+
+	     "Data de admissao: "+this.dataAdmissao+"\n"+
+	     "Salario: "+this.salario;
+	}
+}
+
+
+
+package Pessoas;
+
+public class ClassePrincipal {
+
+	public static void main(String[] args) {
+		Funcionario bruno = new Funcionario("Bruno Rocha","0000000");
+		bruno.salario = 100;
+		System.out.println(bruno.getPessoa());
+	}
+
+}
+
+
+
+
+
+package Pessoas;
+
+public class Funcionario extends Pessoa{
+	String dataAdmissao;
+	double salario;
+
+	public Funcionario() {
+		super();
+		this.dataAdmissao = "";
+		this.salario = 0;
+	}
+	public Funcionario(String nome, String cpf) {
+		super(nome, cpf, "01/01/01");
+		this.dataAdmissao = "";
+		this.salario = 0;
+	}
+	
+	public String getPessoa() {
+		return super.getPessoa()+"\n"+
+	     "Data de admissao: "+this.dataAdmissao+"\n"+
+	     "Salario: "+this.salario;
+	}
+}
+
+
+package Pessoas;
+
+public class Pessoa {
+	String nome;
+	String cpf;
+	String dataNascimento;
+	Endereco endereco;
+	
+	public Pessoa(String nome, String cpf, String dataNascimento) {
+		this.nome = nome;
+		this.dataNascimento = dataNascimento;
+		this.cpf = cpf;
+		this.endereco = new Endereco();
+	}
+
+	public Pessoa(String nome, String cpf) {
+		this.nome = nome;
+		this.dataNascimento = "";
+		this.cpf = cpf;
+		this.endereco = new Endereco();
+	}
+	
+	public Pessoa() {
+		this.nome = "";
+		this.dataNascimento = "";
+		this.cpf = "";
+		this.endereco = new Endereco();
+	}
+	
+	public String getPessoa() {
+		return "Nome: "+this.nome+"\n"+
+	           "Dt Nascimento: "+this.dataNascimento+"\n"+
+				"CPF: "+this.cpf+"\n"+
+				"Endereco: "+this.endereco.enderecoCompleto();		
+	}
+}
+
+
+public class Endereco {
+	String logradouro;
+	String cep;
+	String numero;
+	String bairro;
+	String cidade;
+	String uf;
+	
+	public String enderecoCompleto() {
+		return this.logradouro+", "+
+	           this.numero+", "+
+				this.bairro+" - "+
+	           this.cidade+"/"+this.uf;
+	}
+}
+
+
+public class Fabricante {
+	String razaoSocial;
+	String cnpj;
+	Endereco endereco;
+}
+
+
+
+
+public class PilotoDuplo extends Piloto {
+	double tamanhoOutraPonta;
+	String corOutraPonta;
+	int cargaOutraPonta;
+}
+
+
+
+package Default;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		PilotoDuplo azul = new PilotoDuplo();
+		azul.cor = "Azul";
+		azul.qtdCarga = 100;
+		azul.fabricante = new Fabricante();
+		azul.fabricante.razaoSocial = "WBM";
+		azul.fabricante.cnpj = "5465456456456";	
+		azul.fabricante.endereco = new Endereco();
+		azul.fabricante.endereco.logradouro = "Rua qualquer";
+		azul.fabricante.endereco.numero = "45";
+		azul.fabricante.endereco.cidade = "Recife";
+		azul.corOutraPonta = "Vermelha";
+		System.out.println(azul.fabricante.endereco.enderecoCompleto());
+
+		
+
+	}
+
+}
+
+
+
+
+public class Piloto {
+	String cor;
+	String formato;
+	double tamanhoPonta;
+	boolean tampado;
+	int qtdCarga;
+	
+	public Piloto() {
+		this.qtdCarga = 100;
+		this.tampado = true;	
+	}
+	public void escrever(String texto) {
+		if ((!this.tampado)&&(this.qtdCarga>0)) {
+			System.out.println(texto);
+		}else {
+			System.out.println("Impossivel escrever");
+		}
+	}
+	public void tampar() {
+		if (!this.tampado) {
+			System.out.println("Tampei a caneta");
+			this.tampado = true;
+		}else {
+		}
+	}
+	public void destampar() {
+		if (this.tampado) {
+			System.out.println("Ja esta tampada");
+			System.out.println("Destampei a caneta");
+			this.tampado = false;
+		}else {
+			System.out.println("Ja esta destampada");
+		}
+	}
+
+}
+
+
+
+package C;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+package DadosGeograficos;
+
+public class Pessoa {
+	String nome;
+	String cpf;
+	String dataNascimento;
+	Endereco endereco;
+}
+
+public class Endereco {
+	String logradouro;
+	String cep;
+	String numero;
+	String bairro;
+	String cidade;
+	String uf;
+	
+	public String enderecoCompleto() {
+		return this.logradouro+", "+
+	           this.numero+", "+
+				this.bairro+" - "+
+	           this.cidade+"/"+this.uf;
+	}
+}
+
+
+   

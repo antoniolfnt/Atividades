@@ -1,0 +1,21 @@
+﻿package Default;
+
+
+
+public class Endereço {
+
+String cep;
+
+String logadouro;
+
+String numero;
+
+String complemento;
+
+String bairro;
+String cidade;
+
+String uf;
+
+
+}

@@ -1,0 +1,43 @@
+package Default;
+
+public class Piloto {
+	String cor;
+	String formato;
+	double tamanhoPonta;
+	boolean tampado;
+	int qtdCarga;
+	Fabricante fabricante;
+	
+	
+	public Piloto() {
+		this.qtdCarga = 100;
+		this.tampado = true;
+	}
+	public void escrever(String texto) {
+		if ((!this.tampado)&&(this.qtdCarga>0)) {
+			System.out.println(texto);
+		}else {
+			System.out.println("Impossivel escrever");
+		}
+	}
+	public void tampar() {
+		if (!this.tampado) {
+			System.out.println("Tampei a caneta");
+			this.tampado = true;
+		}else {
+		}
+	}
+	public void destampar() {
+		if (this.tampado) {
+			System.out.println("Já esta tampada");
+			System.out.println("Destampei a caneta");
+			this.tampado = false;
+		}else {
+			System.out.println("Já esta destampada");
+		}
+	}
+
+}
+
+
+

@@ -1,0 +1,27 @@
+package Default;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Piloto azul = new Piloto ();
+		azul.cor = "Azul";
+		azul.qtdCarga = 100;
+		
+		azul.fabricante = new Fabricante();
+		azul.fabricante.razaoSocial = "WBM";
+		azul.fabricante.cnpj = "54864894684";
+	
+		azul.fabricante.endereço = new Endereço();
+	
+		azul.fabricante.endereço.bairro = "centro";
+		azul.fabricante.endereço.cep = 5545845;
+		azul.fabricante.endereço.cidade = "Recife";
+		azul.fabricante.endereço.complemento = "Próximo à ";
+		azul.fabricante.endereço.uf = "PE";
+		azul.fabricante.endereço.logadouro = "Rua dois, ";
+		azul.fabricante.endereço.logadouro = "65";
+		System.out.println("")
+	}
+
+}
+

@@ -1,0 +1,15 @@
+package nomeinformar;
+import java.util.Scanner;
+public class Nomeinformar {
+    public static void main(String[] args) {
+   Scanner nomeIn = new Scanner(System.in);
+    String Nomeinformar;
+     System.out.print("Digite o seu nome:");
+   Nomeinformar = nomeIn.nextLine();
+        System.out.println("Olá " + Nomeinformar);
+       
+   
+   
+    }
+    
+}

@@ -1,0 +1,8 @@
+package Default;
+
+public class Fabricante {
+	String razaoSocial;
+	String cnpj;
+	Endereço endereço;
+	
+}

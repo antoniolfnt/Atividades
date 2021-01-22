@@ -1,0 +1,11 @@
+from os import chdir, getcwd, listdir
+import os.path, time
+
+cam = input('DIgite o caminho: ')
+chdir(cam)
+print(getcwd())
+for c in listdir():
+	print("Última modiffcação: %s" % time.ctime(os.path.getmtime(c)))
+	print("Data de Criação: %s" % time.ctime(os.path.getctime(c)))
+	print()
+	print (c)
